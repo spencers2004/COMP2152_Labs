@@ -36,7 +36,7 @@ def display_credentials(credentials):
 
 def add_credential(website, username, password):
     conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor
+    cursor = conn.cursor()
     cursor.execute(
         "INSERT INTO vault (website, username, password) VALUES (? ,?, ?)",
         (website, username, password)
